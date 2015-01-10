@@ -10,7 +10,7 @@ console.log(JSON.stringify(args));
 
 margin = args.margin || '0cm'
 orientation = args.orientation || 'portrait'
-render_time = args.render_time || 10000 
+render_time = parseInt(args.rendering_time || 10000)
 cookies = {}
 
 if args.cookies?
