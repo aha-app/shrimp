@@ -81,7 +81,7 @@ module Shrimp
       
       arg_list = args.map {|key, value| "-#{key} '#{value}'" }
       
-      [@executable, SCRIPT_FILE, arg_list].flatten.join(" ")
+      [@executable, "--ssl-protocol=any", SCRIPT_FILE, arg_list].flatten.join(" ")
     end
 
     # Public: renders to PDF. Returns file handle to generated PDF.

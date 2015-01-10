@@ -25,7 +25,7 @@ if args.cookies?
   phantom.cookies = cookies
 
 page.viewportSize = { width:1200, height:1200 }
-page.zoomFactor = args.zoom
+page.zoomFactor = args.zoom || 1.0
 if args.clip_height?
   page.clipRect =
     left: 0
@@ -61,6 +61,7 @@ page.onResourceReceived = (resource) =>
 # Don't accept gzipped responses to fix https://github.com/ariya/phantomjs/issues/10930
 page.customHeaders =
   "Accept-Encoding": "identity"
+  "X-Publishing": "true"
   
 page.onError = (msg, trace) ->
   msgStack = ['ERROR: ' + msg]
