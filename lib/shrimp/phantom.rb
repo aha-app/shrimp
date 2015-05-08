@@ -28,7 +28,7 @@ module Shrimp
     
     attr_accessor :source, :configuration, :outfile, :executable
     attr_reader :options, :cookies, :result, :error
-    SCRIPT_FILE = File.expand_path('../rasterize.coffee', __FILE__)
+    SCRIPT_FILE = File.expand_path('../rasterize.js', __FILE__)
     
     def self.default_executable
       (defined?(Bundler::GemfileError) ?  
